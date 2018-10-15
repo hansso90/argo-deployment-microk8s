@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: minio-p-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 40Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/home/pdok/tmp/k8s/volume/"
